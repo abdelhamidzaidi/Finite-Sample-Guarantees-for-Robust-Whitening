@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article and this archive."
+title: "Code and results for: Finite-Sample Guarantees for Robust Whitening"
+authors:
+  - family-names: Zaidi
+    given-names: Abdelhamid Taieb
+    affiliation: "Department of Mathematics, College of Science, Qassim University"
+    email: a.zaidi@qu.edu.sa
+version: "1.0"
+license: MIT
+repository-code: "https://github.com/abdelhamidzaidi/robust-whitening-margin"
+# After the Zenodo DOI is assigned, add a line:  doi: "10.5281/zenodo.NNNNNNN"
