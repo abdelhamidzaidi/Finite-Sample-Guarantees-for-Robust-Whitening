@@ -15,6 +15,7 @@ failed or capped runs.
 | `table2_lemma3.py`, `gamma_s.py` | Table 2; source margins of Section 6.1 |
 | `sec6_runs.py`, `exact_families.py`, `sec7_runs.py`, `robust_runs.py`, `remarks_pdc.py` | simulations of Sections 6 and 7 |
 | `make_tables.py`, `make_figures.py` | Tables 3-7 and Figures 1-5 from the stored results |
+| `compare.py` | compares a fresh rerun with the stored results, value by value |
 | `run_all.py` (`run_all.sh`) | runs everything in order |
 | `results.zip` | stored result files (.pkl) used in the manuscript, and `tables_output.txt` |
 | `requirements.txt` | exact library versions (Python 3.12.3) |
@@ -35,7 +36,15 @@ Unzip `results.zip` (on Windows: right-click > Extract All); this gives the fold
        python make_figures.py path/to/results     # writes fig_*.pdf in the current folder
     cd ..
     python table2_lemma3.py                           # Table 2 (a few minutes)
+## Check a complete rerun against the stored results
+After running `python run_all.py` in an empty folder, compare its result files
+with the stored ones:
 
+     python compare.py results path/to/new/folder
+
+It reports how many values are identical, equal up to rounding, or different
+(computing times are not compared).
+   
 ## Rerun every simulation from scratch (about 1.5 hours on one core)
     python run_all.py              # Windows, macOS or Linux
     sh run_all.sh                  # alternative on macOS or Linux
