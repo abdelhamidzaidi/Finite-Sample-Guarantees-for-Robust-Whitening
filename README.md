@@ -16,6 +16,7 @@ failed or capped runs.
 | `sec6_runs.py`, `exact_families.py`, `sec7_runs.py`, `robust_runs.py`, `remarks_pdc.py` | simulations of Sections 6 and 7 |
 | `make_tables.py`, `make_figures.py` | Tables 3-7 and Figures 1-5 from the stored results |
 | `compare.py` | compares a fresh rerun with the stored results, value by value |
+| `independent_validation.zip` | independent re-implementation (SDP solver, closed-form autocovariances, new seeds) and its results; unzip it to get the folder `independent_validation` and see its README |
 | `run_all.py` (`run_all.sh`) | runs everything in order |
 | `results.zip` | stored result files (.pkl) used in the manuscript, and `tables_output.txt` |
 | `requirements.txt` | exact library versions (Python 3.12.3) |
@@ -30,21 +31,21 @@ Unzip `results.zip` (on Windows: right-click > Extract All); this gives the fold
     cd results
     python ../make_tables.py > tables_check.txt     # identical to tables_output.txt
     python ../make_figures.py                         # writes fig_*.pdf
-    The results folder can also be passed as an argument, so the figures
-       can be drawn from any folder:
-
-       python make_figures.py path/to/results     # writes fig_*.pdf in the current folder
     cd ..
     python table2_lemma3.py                           # Table 2 (a few minutes)
+
+The results folder can also be passed as an argument, so that the figures can be drawn from any folder:
+
+    python make_figures.py path/to/results            # writes fig_*.pdf in the current folder
+
 ## Check a complete rerun against the stored results
-After running `python run_all.py` in an empty folder, compare its result files
-with the stored ones:
+After running `python run_all.py` in an empty folder, compare its result files with the stored ones:
 
-     python compare.py results path/to/new/folder
+    python compare.py results path/to/new/folder
 
-It reports how many values are identical, equal up to rounding, or different
-(computing times are not compared).
-   
+It reports how many values are identical, equal up to rounding, or different (computing times are
+not compared).
+
 ## Rerun every simulation from scratch (about 1.5 hours on one core)
     python run_all.py              # Windows, macOS or Linux
     sh run_all.sh                  # alternative on macOS or Linux
@@ -52,6 +53,11 @@ It reports how many values are identical, equal up to rounding, or different
 All random numbers come from fixed seeds, so a complete rerun reproduces the stored results
 exactly with the library versions of `requirements.txt`; only computing times vary.
 A complete rerun from a clean copy reproduced all 141 stored result files value by value.
+
+## Independent validation
+The archive `independent_validation.zip` recomputes the population margins and Table 5 with a separate
+implementation that does not use the repository's code. Unzip it in this folder (it creates the folder
+`independent_validation`), unzip `results.zip` as well, and follow `independent_validation/README.md`.
 
 ## Citation
 See `CITATION.cff`. The archived version of this repository has a permanent DOI on Zenodo.
