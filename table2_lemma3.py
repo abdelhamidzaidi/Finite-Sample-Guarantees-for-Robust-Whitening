@@ -2,7 +2,7 @@
 table2_lemma3.py -- Table 2 (Section 6.2): Monte Carlo check of Lemma 3,
     E || hat Gamma_X(tau) - Gamma_X(tau) ||_F^2 <= (p+1) S_X / (T - tau).
 For K = 10 lags and T in {1000, 5000, 20000}, 300 replications each, it prints
-max_k E||E_k||_F^2 (estimated), the bound min_k (p+1) S_X/(T - tau_k), their ratio,
+max_k E||E_k||_F^2 (estimated), the common bound max_k (p+1) S_X/(T - tau_k), their ratio (three decimals),
 and T * max_k E||E_k||_F^2 (constant if the rate is 1/T). Seeds: 7 + T.
 Output: printed rows of Table 2; S_X = 6.21 is printed first.
 """
@@ -24,5 +24,5 @@ for T in [1000, 5000, 20000]:
     # the common bound max_k (p+1) S_X/(T - tau_k) = (p+1) S_X/(T - tau_K) bounds every k,
     # and the ratio column is max_k of E||E_k||_F^2 divided by its own bound (Table 2 caption)
     bnd = np.array([(P+1)*S/(T-t) for t in range(1, K+1)])
-    print('T=%6d  max_k E||E_k||_F^2 = %.3e  common bound = %.3e  max_k ratio = %.2f  T*E = %.2f'
+    print('T=%6d  max_k E||E_k||_F^2 = %.3e  common bound = %.3e  max_k ratio = %.3f  T*E = %.2f'
           % (T, emp.max(), bnd.max(), (emp/bnd).max(), emp.max()*T))
