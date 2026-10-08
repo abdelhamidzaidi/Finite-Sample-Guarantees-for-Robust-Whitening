@@ -29,6 +29,10 @@ Unzip `results.zip` (on Windows: right-click > Extract All); this gives the fold
     cd results
     python ../make_tables.py > tables_check.txt     # identical to tables_output.txt
     python ../make_figures.py                         # writes fig_*.pdf
+    The results folder can also be passed as an argument, so the figures
+       can be drawn from any folder:
+
+       python make_figures.py path/to/results     # writes fig_*.pdf in the current folder
     cd ..
     python table2_lemma3.py                           # Table 2 (a few minutes)
 
