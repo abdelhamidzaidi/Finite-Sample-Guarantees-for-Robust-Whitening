@@ -6,7 +6,7 @@ authors:
     given-names: Abdelhamid Taieb
     affiliation: "Department of Mathematics, College of Science, Qassim University"
     email: a.zaidi@qu.edu.sa
-version: "1.0.2"
+version: "1.0.3"
 license: MIT
 repository-code: "https://github.com/abdelhamidzaidi/robust-whitening-margin"
-# After the Zenodo DOI is assigned, add a line:  doi: "10.5281/zenodo.NNNNNNN"
+# After the Zenodo DOI is assigned, add a line:  doi: "   doi: "10.5281/zenodo.23213838"
