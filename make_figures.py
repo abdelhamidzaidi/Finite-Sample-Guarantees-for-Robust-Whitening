@@ -90,7 +90,7 @@ fig.tight_layout(rect=(0, 0, 1, 0.95)); fig.savefig('fig_cmp_snr_cond.pdf'); fig
 # ---------------- Figure 2: exact matrices (Section 7.2) ----------------
 # Iterations to the first PD iterate against kappa^2 = (R_+/gamma_-)^2, where
 # R_+ = (sum_k ||A_k||_2^2)^{1/2} >= R and gamma_- <= gamma (certified): the lines
-# 3 kappa^2 and 2 kappa^2 are valid upper bounds for PC (Proposition 4(i)) and
+# 3 kappa^2 and 2 kappa^2 are valid upper bounds for PC (Proposition A1(i)) and
 # MNP-first (Proposition 3(ii)).
 fig, ax = plt.subplots(1, 1, figsize=(4.3, 3.2))
 for m, key in [('PC', 'PC'), ('PDC', 'PDC'), ('MNP-first', 'MNP')]:
